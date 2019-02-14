@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<style>
+    #ballerina {
+        /* #1. correct the code for ID */
+        position: absolute;
+        width: 50vmin;
+        height: 50vmin;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        background-image: url("https://previews.123rf.com/images/kathygold/kathygold1009/kathygold100900068/7730727-african-american-ballerina-silhouette-on-a-white-background.jpg");
+        transform-origin: center;
+
+        animation: turn1 2s 1,
+            turn2 0.5s 10,
+            turn3 2s ease-out 1;
+        animation-delay: 4.5s,
+            fadeIN 1s,
+            fadeOUT 1s;}
+
+    
+        @keyframes turn1 {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes turn2 {
+            from {
+                transform: rotateY(360deg);
+            }
+
+            to {
+                transform: rotateY(0deg);
+            }
+        }
+
+        @keyframes turn3 {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    @keyframes fadeOUT{
+        from {
+            opacity: 1;
+        }
+        to {opacity: 0;}
+    }
+    @keyframes fadeIN{
+        from {
+            opacity: 0;
+        }
+        to {opacity: 1;}
+
+</style>
+
+<body>
+    <div id="ballerina"></div>
+</body>
+</html>
