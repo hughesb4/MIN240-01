@@ -47,6 +47,17 @@
         cursor: pointer;
         user-select: none;
     }
+    
+    #replayBTN {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background-color: lightgray;
+        cursor: pointer;
+        user-select: none;
+    }
 
     #stalk {
         position: absolute;
@@ -158,7 +169,8 @@
         myStartScreen =
             document.querySelector("#startScreen");
         
-         var myEndScreen;
+        var myEndScreen;
+        myEndScreen =
             document.querySelector("#endScreen");
 
         var myGameScreen;
@@ -174,6 +186,7 @@
         myStartBTN.style.textAlign = "center";
         myStartBTN.style.fontSize = "3em";
         myStartBTN.addEventListener("click", hideStartShowGame, false);
+        
 
         var myFlower;
         myFlower =
@@ -183,9 +196,9 @@
             document.querySelector("#body");
 
         var positionY = 0;
-
+        
         myFlower.addEventListener("click", bugCrawl, false);
-
+        
         function bugCrawl() {
             positionY = positionY - 10;
             myBug.style.transform = "translateY(" + positionY + "%)";
@@ -212,15 +225,28 @@
             myStartScreen.style.display = "none";
             myGameScreen.style.display = "block";
         }
-                
         
+        myFlower.addEventListener("click", hideGameScreen, false);
+        myBloom.addEventListener("click", hideGameScreen, false);
         
-        /*function hideGameScreen(){
-            if(positionY === 5)
+        function hideGameScreen(){
+            if(positionY === -50)
             {myGameScreen.style.display = "none";
             myEndScreen.style.display = "block";}
             
-        }*/
+            /*if (transformBloom === 1.5)
+            {myGameScreen.style.display = "none";
+            myEndScreen.style.display = "block";
+            }*/
+        }
+        var myReplayBTN;
+        myReplayBTN = document.querySelector("#replayBTN");
+        myReplayBTN.innerHTML = "REPLAY";
+        myReplayBTN.style.textAlign = "center";
+        myReplayBTN.style.fontSize = "3em";
+        myReplayBTN.addEventListener("click", hideStartShowGame, false);
+        
+        
     </script>
 
 </body>
