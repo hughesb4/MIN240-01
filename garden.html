@@ -158,9 +158,9 @@
         <div id="body">
             <div id="head"></div>
         </div>
+        </div>
     <div id="endScreen">
         <div id="replayBTN"></div>
-        </div>
     </div>
 
 
@@ -186,6 +186,13 @@
         myStartBTN.style.textAlign = "center";
         myStartBTN.style.fontSize = "3em";
         myStartBTN.addEventListener("click", hideStartShowGame, false);
+        
+        var myReplayBTN;
+        myReplayBTN = document.querySelector("#replayBTN");
+        myReplayBTN.innerHTML = "REPLAY";
+        myReplayBTN.style.textAlign = "center";
+        myReplayBTN.style.fontSize = "3em";
+        myReplayBTN.addEventListener("click", hideEndScreen, false);
         
 
         var myFlower;
@@ -232,20 +239,18 @@
         function hideGameScreen(){
             if(positionY === -50)
             {myGameScreen.style.display = "none";
-            myEndScreen.style.display = "block";}
+            myEndScreen.style.display = "block";
+            positionY = positionY + 50;}
             
             /*if (transformBloom === 1.5)
             {myGameScreen.style.display = "none";
             myEndScreen.style.display = "block";
             }*/
         }
-        var myReplayBTN;
-        myReplayBTN = document.querySelector("#replayBTN");
-        myReplayBTN.innerHTML = "REPLAY";
-        myReplayBTN.style.textAlign = "center";
-        myReplayBTN.style.fontSize = "3em";
-        myReplayBTN.addEventListener("click", hideStartShowGame, false);
-        
+        function hideEndScreen(){
+            myEndScreen.style.display = "none";
+            myGameScreen.style.display = "block";
+        }   
         
     </script>
 
