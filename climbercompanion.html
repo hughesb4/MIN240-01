@@ -9,13 +9,64 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <style>
+    body{
+        background-image:url();
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-repeat:no-repeat;
+    }
+    
+    .sidenav{
+        width: 175px;
+        height: 100%;
+        position:fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        background-color: orange;
+        overflow-x: hidden;
+        font-family: 'brandon grotesque', sans-serif;
+    }
+    
+    .sidenav li{
+     
+        padding: 5px 5px 5px 30px;
+        font-size: 15px;
+        color:white;
+        z-index; 10;
+        display: block;
+        transition: 0.5s;
+        cursor:pointer;
+    }
+    
+    .sidenav li:hover{
+        color: black;
+    }
+    
+    .menuItem{
+       position: absolute;
+        left: 178px;
+        background-color: lightgrey;
+        width: 50%;
+        height: 100%;
+        color: white;
+        font-size: 2em;
+        text-align: left;
+        z-index: 5;
+        opacity: 100;
+    }
+    
+    
     #calendar{
         position: absolute;
         width:50vw;
     }
+    
     ul, li{
         list-style-type:none;
     }
+    
 </style>
 
 <body>
@@ -26,15 +77,15 @@
         <li id="belay" class="menuItem">Belay Buddy Finder</li>
     </div>-->
 
-    <div id="mySidenav" class="sidenav" style="width: 50px;">
-        <li id="classes" class="menuItem">Classes</li>
-        <li id="volunteer" class="menuItem">Volunteer</li>
-        <li id="belay_buddy" class="menuItem">Belay Buddy Finder</li>
-        <li id="settings" class="menuItem">Account Settings</li>
+    <div id="mySidenav" class="sidenav" ;>
+        <li id="classes" class="navItem">Classes</li>
+        <li id="volunteer" class="navItem">Volunteer</li>
+        <li id="belay_buddy" class="navItem">Belay Buddy Finder</li>
+        <li id="settings" class="navItem">Account Settings</li>
     </div>
 
 
-    <div id="classesMenu" class="menuItem" style="display:inline-block;">
+    <div id="classesMenu" class="menuItem" style="display:none;">
         <h2>Classes</h2>
         <p>Search for classes to teach you climbing based on your skill level from one of our many seasoned climbers!</p>
         <ul>
@@ -57,7 +108,7 @@
         </ul>
     </div>
 
-    <div id="volunteerMenu" class="menuItem" style="display: inline-block;">
+    <div id="volunteerMenu" class="menuItem" style="display: none;">
         <ul>
             <h3>Volunteer</h3>
             <li>
@@ -94,7 +145,7 @@
         <div id="submit_btn">Submit</div>
     </div>
 
-    <div id="belayMenu" class="menuItem" style="display: inline-block;">
+    <div id="belayMenu" class="menuItem" style="display: none;">
         <h3>Belay Buddy Finder</h3>
         <p>Climbing alone isn't safe (and usually not possible) so look below and find someone to belay with!</p>
         <table class="table table-bordered">
@@ -133,47 +184,90 @@
         </table>
 
     </div>
-    
-    <div id="accountMenu" class="menuItem" style="display: inline-block;">
-    <form>
-    <h3>Account Settings</h3>    
-        
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Name</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Email Address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Skill Level</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Never Climbed</option>
-      <option>Beginner</option>
-      <option>Intermediate</option>
-      <option>Advanced</option>
-      <option>Expert</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Weight</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Age</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Gender</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Male</option>
-      <option>Female</option>
-      <option>Non-Gender</option>
-    </select>
-  </div>    
-</form>
-    
+
+    <div id="accountMenu" class="menuItem" style="display: none;">
+        <form>
+            <h3>Account Settings</h3>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Name</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Email Address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Skill Level</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Never Climbed</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                    <option>Expert</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Weight</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Age</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Gender</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Non-Gender</option>
+                </select>
+            </div>
+        </form>
+
     </div>
+
+
+    <script>
+        var classPage = document.querySelector("#classesMenu");
+        var volPage = document.querySelector("#volunteerMenu");
+        var belayPage = document.querySelector("#belayMenu");
+        var accountPage = document.querySelector("#accountMenu");
+
+        classPage.addEventListener("click", classPagefun, false);
+        volPage.addEventListener("click", volPagefun, false);
+        belayPage.addEventListener("click", belayPagefun, false);
+        accountPage.addEventListener("click", accountPagefun, false);
+
+        function classPagefun() {
+            classPage.style.display = "inline-block";
+            volPage.style.display = "none";
+            belayPage.style.display = "none";
+            accountPage.style.display = "none";
+        }
+
+        function volPagefun() {
+            classPage.style.display = "none";
+            volPage.style.display = "inline-block";
+            belayPage.style.display = "none";
+            accountPage.style.display = "none";
+        }
+
+        function belayPagefun() {
+            classPage.style.display = "none";
+            volPage.style.display = "none";
+            belayPage.style.display = "inline-block";
+            accountPage.style.display = "none";
+        }
+
+        function accountPagefun() {
+            classPage.style.display = "none";
+            volPage.style.display = "none";
+            belayPage.style.display = "none";
+            accountPage.style.display = "inline-block";
+        }
+
+    </script>
+
 
 </body>
