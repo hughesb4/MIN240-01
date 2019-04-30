@@ -9,34 +9,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <style>
-    /*#mainLogo{
-        background-image: url(./CC_text.png);
+    #mainLogo{
+        background-image: url(CC_bg.jpg);
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 60vw;
-        height: 60vh;
-        background-size: contain;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
         background-repeat: no-repeat;
-        opacity: 1;
-        animation: runner 5s ease-in;
+        z-index: 0;
+        opacity: 0;
+        animation: intro 3s ease-in-out;
     }
     
-    @keyframes runner{
-        0%{ 
-            transform: translateX(0%);
-        }
-        50%{
-            transform: translateX(50%);
-        }
-        100%{
-            transform: translateX(100%);
-        }
-    }*/
+    @keyframes intro{
+        0%{opacity: 1; z-index:200;}
+        
+        100%{opacity: 0; z-index:200;}
+    }
     
     body{
-        background-image:url(./group_cliff.jpg);
+        background-image:url(images/group_cliff.jpg);
         background-size: cover;
         position:absolute;
         width: 100vw;
@@ -50,7 +45,7 @@
         height: 17vh;
         position:absolute;
         z-index: 10;
-        background-color: orange;
+        background-image: linear-gradient(to bottom, rgba(255,152,0,1), rgba(255,152,0,.5));
         overflow-x: hidden;
         font-family: 'brandon grotesque', sans-serif;
         filter: drop-shadow(0px 0px 10px black);
@@ -116,6 +111,9 @@
     #smallLogo:hover{
         filter:drop-shadow(0px 10px 10px black);
     }
+    .navItem{
+        overflow: hidden;
+    }
 </style>
 
 <body>
@@ -132,7 +130,7 @@
         <li id="volunteer" class="navItem">Volunteer</li>
         <li id="belay_buddy" class="navItem">Belay Buddy Finder</li>
         <li id="settings" class="navItem">Account Settings</li>
-        <img src="./CC_text.png" alt="logo" id="smallLogo">
+        <img src="images/CC_text.png" alt="logo" id="smallLogo">
     </div>
 
 
@@ -154,7 +152,7 @@
             </li>
             <li>
                 <h3>Pick A Date</h3>
-                <img src='./May-2019-calendar-b9.jpg' id="calendar">
+                <img src='images/May-2019-calendar-b9.jpg' id="calendar">
             </li>
         </ul>
     </div>
@@ -294,7 +292,7 @@
         volBtn.addEventListener("click", volPagefun, false);
         belayBtn.addEventListener("click", belayPagefun, false);
         accountBtn.addEventListener("click", accountPagefun, false);
-        homeBtn.addEventListener("click",homePagefun, false);
+        homeBtn.addEventListener("click", homePagefun, false);
 
         function classPagefun() {
             classPage.style.display = "inline-block";
@@ -323,15 +321,17 @@
             belayPage.style.display = "none";
             accountPage.style.display = "inline-block";
         }
-        
-        function homePagefun(){
+
+        function homePagefun() {
             classPage.style.display = "none";
             volPage.style.display = "none";
             belayPage.style.display = "none";
             accountPage.style.display = "none";
         }
+
     </script>
 
 
 </body>
+
 </html>
