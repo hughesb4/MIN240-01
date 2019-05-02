@@ -7,10 +7,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+
+
+
 </head>
 <style>
     #mainLogo{
-        background-image: url(./CC_bg.jpg);
+        background-image: url(CC_bg.jpg);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -31,13 +39,20 @@
     }
     
     body{
-        background-image:url(./group_cliff.jpg);
+        background-image:url(images/group_cliff.jpg);
         background-size: cover;
         position:absolute;
         width: 100vw;
         height: 100vh;
         background-repeat:no-repeat;
         font-size: 10px;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+    
+    h2{
+        font-family: 'Montserrat', sans-serif;
+
     }
     
     .sidenav{
@@ -48,7 +63,7 @@
         z-index: 10;
         background-image: linear-gradient(to bottom, rgba(255,152,0,1), rgba(255,255,255,0));
         overflow-x: hidden;
-        font-family: 'brandon grotesque', sans-serif;
+        font-family: 'Alfa Slab One', cursive;
         filter: drop-shadow(0px 0px 10px black);
     }
     
@@ -72,17 +87,22 @@
        position: absolute;
         padding-left: 40px;
         padding-top: 20px;
-        top: 66%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: lightgray;
+        border-radius: 5px;
         width: 75vw;
-        height: 100vh;
+        height: 80vh;
         color: black;
         font-size: 15px;
         text-align: left;
         z-index: 5;
         opacity: 100;
+    }
+    
+    #accountMenu{
+        overflow: scroll;
     }
     
      #belayMenu{
@@ -91,7 +111,7 @@
     
     #calendar{
         position: absolute;
-        width:40vw;
+        width:30vw;
     }
     
     ul, li{
@@ -101,8 +121,9 @@
     
     #smallLogo{
         position:absolute;
-        width: 14%;
+        width: 11%;
         display: inline;
+        overflow: hidden;
         left: 90%;
         transform: translate(-50%);
         filter:drop-shadow(0px 10px 10px white);
@@ -113,6 +134,20 @@
     }
     .navItem{
         overflow: hidden;
+    }
+    
+    #submitBtn{
+        background-color: white;
+        font-family: 'Alfa Slab One', cursive;
+        font-size: 1em;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 10%;
+    }
+    
+    #submitBtn: hover{
+        filter:drop-shadow(5px 5px 5px black);
     }
     
     @media only screen and (max-width: 600px){
@@ -127,13 +162,13 @@
         }
         #smallLogo{
             position:absolute;
-            left: 50%;
+            left: 52%;
             top: 1%;
-            transform: translate(-50%);
             }
         .menuitem{
             width: 100%;
-            height: 100%;
+            height: 90vh;
+            top: 55%;
             z-index: 100;
             font-size: 1em;
             padding-left: 2px;
@@ -168,7 +203,7 @@
         <li id="volunteer" class="navItem">Volunteer</li>
         <li id="belay_buddy" class="navItem">Belay Buddy Finder</li>
         <li id="settings" class="navItem">Account Settings</li>
-        <img src="./CC_text.png" alt="logo" id="smallLogo">
+        <img src="images/CC_text.png" alt="logo" id="smallLogo">
     </div>
 
 
@@ -190,14 +225,14 @@
             </li>
             <li>
                 <h3>Pick A Date</h3>
-                <img src='./May-2019-calendar-b9.jpg' id="calendar">
+                <img src='images/May-2019-calendar-b9.jpg' id="calendar">
             </li>
         </ul>
     </div>
 
     <div id="volunteerMenu" class="menuItem" style="display: none;">
         <ul>
-            <h3>Volunteer</h3>
+            <h2>Volunteer</h2>
             <li>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -229,11 +264,11 @@
                 Major trail upkeep is needed in Clift Wilderness. Replacing various wood slabs, clearing of falln trees, and whtever else is needed. This major overhaul will be an all day event and lunch will be provided.
             </li>
         </ul>
-        <div id="submit_btn">Submit</div>
+        <div id="submitBtn">Submit</div>
     </div>
 
     <div id="belayMenu" class="menuItem" style="display: none;">
-        <h3>Belay Buddy Finder</h3>
+        <h2>Belay Buddy Finder</h2>
         <p>Climbing alone isn't safe (and usually not possible) so look below and find someone to belay with!</p>
         <table class="table table-bordered" id="belayTable">
             <thead>
@@ -274,7 +309,7 @@
 
     <div id="accountMenu" class="menuItem" style="display: none;">
         <form>
-            <h3>Account Settings</h3>
+            <h2>Account Settings</h2>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Name</label>
